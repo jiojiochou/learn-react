@@ -1,8 +1,15 @@
+import dayjs from "dayjs";
+
 export function Calendar() {
 
     const day = [
         '一', '二', '三', '四', '五', '六', '日'
     ]
+
+    console.log(dayjs('2025-8-1').daysInMonth()) // 这个月有多少天
+
+    console.log(dayjs('2025-8-1').startOf('month').format('YYYY-MM-DD')) // 这个月的第一天
+    console.log(dayjs('2025-8-1').endOf('month').format('YYYY-MM-DD')) // 这个月的最后一天
 
   return (
     <div className="w-100 b-1 b-solid b-gray/50 rounded-md">
@@ -13,7 +20,7 @@ export function Calendar() {
         <select className="mr-3">
           <option>7月</option>
         </select>
-        <button>年</button>
+        <button className="mr-1">年</button>
         <button>月</button>
       </header>
       <main className="px-3">
